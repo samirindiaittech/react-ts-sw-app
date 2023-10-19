@@ -9,7 +9,6 @@ import { useEffect } from 'react'
 import Test from './Test'
 import Abhi from './Abhi'
 import Sam from './Sam'
-import Rit from './Rit'
 
 function App() {
   const updateServiceWorker = async () => {
