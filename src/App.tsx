@@ -15,6 +15,7 @@ import { useEffect } from 'react'
 function App() {
   useEffect(() => {
     setInterval(() => {
+      console.log("test")
       // Get the registration for the service worker.
       navigator.serviceWorker.getRegistration().then((serviceWorkerRegistration) => {
         // Check if there is a new version of the service worker available.
