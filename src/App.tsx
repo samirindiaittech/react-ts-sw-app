@@ -29,7 +29,6 @@ function App() {
         <Route path='/test' element={<Test />} />
         <Route path='/abhi' element={<Abhi />} />
         <Route path='/sam' element={<Sam />} />
-        <Route path='/rit' element={<Rit />} />
       </Routes>
 
       <div className="App" >
@@ -47,9 +46,6 @@ function App() {
             </button>
             <button type='button' onClick={() => navigate('/sam')}>
               Sam
-            </button>
-            <button type='button' onClick={() => navigate('/rit')}>
-              Rit
             </button>
           </div>
           <a
