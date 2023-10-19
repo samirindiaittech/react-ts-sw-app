@@ -3,14 +3,27 @@ import './App.css'
 import { Route, Routes, useNavigate } from "react-router-dom"
 import Test from './Test'
 import Abhi from './Abhi'
+import { useEffect } from 'react'
+import Sam from './Sam'
 
 function App() {
+  const updateServiceWorker = async () => {
+    navigator.serviceWorker.getRegistration().then((serviceWorkerRegistration) => {
+      serviceWorkerRegistration?.update()
+    })
+  }
+
+  useEffect(() => {
+    updateServiceWorker()
+  }, [])
+
   const navigate = useNavigate()
   return (
     <>
       <Routes>
         <Route path='/test' element={<Test />} />
         <Route path='/abhi' element={<Abhi />} />
+        <Route path='/sam' element={<Sam />} />
       </Routes>
 
       <div className="App" >
@@ -25,6 +38,9 @@ function App() {
             </button>
             <button type='button' onClick={() => navigate('/abhi')}>
               Go To Abhi
+            </button>
+            <button type='button' onClick={() => navigate('/sam')}>
+              Go To Sam
             </button>
           </div>
           <a

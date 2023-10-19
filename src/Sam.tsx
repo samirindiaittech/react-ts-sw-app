@@ -1,13 +1,13 @@
 import './App.css'
 import { useNavigate } from "react-router-dom"
 
-function Test() {
+function Sam() {
   const navigate = useNavigate()
   return (
     <>
       <div>
         <span>
-          Test
+        Sam
         </span>
         <button type='button' onClick={() => navigate('/')}>
           Go to App Typescript File
@@ -17,4 +17,4 @@ function Test() {
   )
 }
 
-export default Test
+export default Sam
