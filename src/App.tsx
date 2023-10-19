@@ -1,10 +1,15 @@
 import logo from './logo.svg'
 import './App.css'
-import { Route, Routes, useNavigate } from "react-router-dom"
+import {
+  Route,
+  Routes,
+  useNavigate
+} from "react-router-dom"
+import { useEffect } from 'react'
 import Test from './Test'
 import Abhi from './Abhi'
-import { useEffect } from 'react'
 import Sam from './Sam'
+import Rit from './Rit'
 
 function App() {
   const updateServiceWorker = async () => {
@@ -24,6 +29,7 @@ function App() {
         <Route path='/test' element={<Test />} />
         <Route path='/abhi' element={<Abhi />} />
         <Route path='/sam' element={<Sam />} />
+        <Route path='/rit' element={<Rit />} />
       </Routes>
 
       <div className="App" >
@@ -34,13 +40,16 @@ function App() {
           </p>
           <div>
             <button type='button' onClick={() => navigate('/test')}>
-              Go To Test
+              Test
             </button>
             <button type='button' onClick={() => navigate('/abhi')}>
-              Go To Abhi
+              Abhi
             </button>
             <button type='button' onClick={() => navigate('/sam')}>
-              Go To Sam
+              Sam
+            </button>
+            <button type='button' onClick={() => navigate('/rit')}>
+              Rit
             </button>
           </div>
           <a

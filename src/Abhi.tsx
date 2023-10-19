@@ -10,7 +10,7 @@ function Abhi() {
         Abhi
         </span>
         <button type='button' onClick={() => navigate('/')}>
-          Go to App Typescript File
+          Go to App
         </button>
       </div>
     </>

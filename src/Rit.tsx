@@ -1,13 +1,13 @@
 import './App.css'
 import { useNavigate } from "react-router-dom"
 
-function Test() {
+function Rit() {
   const navigate = useNavigate()
   return (
     <>
       <div>
         <span>
-          Test
+        Rit
         </span>
         <button type='button' onClick={() => navigate('/')}>
           Go to App
@@ -17,4 +17,4 @@ function Test() {
   )
 }
 
-export default Test
+export default Rit
