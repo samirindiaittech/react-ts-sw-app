@@ -9,9 +9,20 @@ import Test from './Test'
 import Abhi from './Abhi'
 import Sam from './Sam'
 import Rit from './Rit'
-import Vip from './Vip'
+import { useEffect } from 'react'
 
 function App() {
+  useEffect(() => {
+    setInterval(() => {
+      // Get the registration for the service worker.
+      navigator.serviceWorker.getRegistration().then((serviceWorkerRegistration) => {
+        // Check if there is a new version of the service worker available.
+        console.log(serviceWorkerRegistration)
+        serviceWorkerRegistration?.update()
+      })
+    }, 10 * 60 * 1000)
+  }, [])
+
   const navigate = useNavigate()
   return (
     <>
@@ -20,7 +31,6 @@ function App() {
         <Route path='/abhi' element={<Abhi />} />
         <Route path='/sam' element={<Sam />} />
         <Route path='/rit' element={<Rit />} />
-        <Route path='/vip' element={<Vip />} />
       </Routes>
 
       <div className="App" >
@@ -41,9 +51,6 @@ function App() {
             </button>
             <button type='button' onClick={() => navigate('/rit')}>
               Rit
-            </button>
-            <button type='button' onClick={() => navigate('/vip')}>
-              Vip
             </button>
           </div>
           <a

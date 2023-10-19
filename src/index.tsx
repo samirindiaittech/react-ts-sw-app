@@ -10,14 +10,6 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
 
-setInterval(() => {
-  // Get the registration for the service worker.
-  navigator.serviceWorker.getRegistration().then((serviceWorkerRegistration) => {
-    // Check if there is a new version of the service worker available.
-    serviceWorkerRegistration?.update()
-  })
-}, 10 * 60 * 1000)
-
 root.render(
   <React.StrictMode>
     <BrowserRouter>
