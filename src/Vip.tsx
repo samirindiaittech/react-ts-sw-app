@@ -2,7 +2,7 @@
 const Vip = () =>{
     return(
         <>
-        <div>Vip</div>
+        <div>Rahul</div>
         </>
     )
 }

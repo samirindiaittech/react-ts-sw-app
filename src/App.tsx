@@ -55,7 +55,7 @@ function App() {
               Rit
             </button>
             <button type='button' onClick={() => navigate('/vip')}>
-              Vip
+              Rahul
             </button>
           </div>
           <a
