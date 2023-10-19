@@ -5,22 +5,12 @@ import {
   Routes,
   useNavigate
 } from "react-router-dom"
-import { useEffect } from 'react'
 import Test from './Test'
 import Abhi from './Abhi'
 import Sam from './Sam'
+import Vip from './Vip'
 
 function App() {
-  const updateServiceWorker = async () => {
-    navigator.serviceWorker.getRegistration().then((serviceWorkerRegistration) => {
-      serviceWorkerRegistration?.update()
-    })
-  }
-
-  useEffect(() => {
-    updateServiceWorker()
-  }, [])
-
   const navigate = useNavigate()
   return (
     <>
@@ -28,6 +18,7 @@ function App() {
         <Route path='/test' element={<Test />} />
         <Route path='/abhi' element={<Abhi />} />
         <Route path='/sam' element={<Sam />} />
+        <Route path='/vip' element={<Vip />} />
       </Routes>
 
       <div className="App" >
@@ -45,6 +36,9 @@ function App() {
             </button>
             <button type='button' onClick={() => navigate('/sam')}>
               Sam
+            </button>
+            <button type='button' onClick={() => navigate('/vip')}>
+              Vip
             </button>
           </div>
           <a
