@@ -7,3 +7,5 @@ const Vip = () =>{
         </>
     )
 }
+
+export default Vip
