@@ -77,7 +77,7 @@ self.addEventListener('message', (event) => {
   }
 });
 
-const currentCacheName = 'my-app-cache-v5';
+// const currentCacheName = 'my-app-cache-v5';
 
 /* self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -93,7 +93,7 @@ const currentCacheName = 'my-app-cache-v5';
   );
 }); */
 
-self.addEventListener('activate', function(event) {
+/* self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
       console.log("activate", currentCacheName)
@@ -108,5 +108,5 @@ self.addEventListener('activate', function(event) {
       );
     })
   );
-});
+});*/
 // Any other custom service worker logic can go here.
