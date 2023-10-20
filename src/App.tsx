@@ -9,7 +9,7 @@ import Test from './Test'
 import Abhi from './Abhi'
 import Sam from './Sam'
 import Rit from './Rit'
-import Vip from './Vip'
+import Rah from './Rah'
 import { useEffect } from 'react'
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
         <Route path='/abhi' element={<Abhi />} />
         <Route path='/sam' element={<Sam />} />
         <Route path='/rit' element={<Rit />} />
-        <Route path='/vip' element={<Vip />} />
+        <Route path='/rah' element={<Rah />} />
       </Routes>
 
       <div className="App" >
@@ -55,7 +55,7 @@ function App() {
             <button type='button' onClick={() => navigate('/rit')}>
               Rit
             </button>
-            <button type='button' onClick={() => navigate('/vip')}>
+            <button type='button' onClick={() => navigate('/rah')}>
               Rahul
             </button>
           </div>

@@ -77,4 +77,35 @@ self.addEventListener('message', (event) => {
   }
 });
 
+const currentCacheName = 'my-app-cache-v1';
+
+/* self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open(currentCacheName).then(function(cache) {
+      return cache.addAll(filesToCache);
+    })
+  );
+}); */
+
+/* self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    self.clients.claim()
+  );
+}); */
+
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames
+          .filter(function(cacheName) {
+            return cacheName !== currentCacheName;
+          })
+          .map(function(cacheName) {
+            return caches.delete(cacheName);
+          })
+      );
+    })
+  );
+});
 // Any other custom service worker logic can go here.
