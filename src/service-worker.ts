@@ -96,7 +96,7 @@ const currentCacheName = 'my-app-cache-v3';
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
-      alert("activate")
+      console.log("activate")
       return Promise.all(
         cacheNames
           .filter(function(cacheName) {
