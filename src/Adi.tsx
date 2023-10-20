@@ -7,7 +7,7 @@ function Adi() {
     <>
       <div>
         <span>
-        Adi
+        Adi Adi
         </span>
         <button type='button' onClick={() => navigate('/')}>
           Go to App
