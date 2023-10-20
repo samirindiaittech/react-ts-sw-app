@@ -14,14 +14,16 @@ import { useEffect } from 'react'
 
 function App() {
   useEffect(() => {
-    setInterval(() => {
-      console.log("test")
+    setInterval(async () => {
+      console.log("test");
       // Get the registration for the service worker.
-      navigator.serviceWorker.getRegistration().then((serviceWorkerRegistration) => {
+      const serviceWorkerRegistration = await navigator.serviceWorker.getRegistration();
+  
+      if (serviceWorkerRegistration) {
         // Check if there is a new version of the service worker available.
-        console.log(serviceWorkerRegistration)
-        serviceWorkerRegistration?.update()
-      })
+        console.log(serviceWorkerRegistration);
+        await serviceWorkerRegistration.update();
+      }
     }, 10 * 60 * 1000)
   }, [])
 
