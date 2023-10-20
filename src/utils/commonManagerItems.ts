@@ -1,8 +1,8 @@
-import { useTargetInterval } from "./useTargetInterval"
+// import { useTargetInterval } from "./useTargetInterval"
 
 export const serviceWorkerRegistrationAutoUpdateAction = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    useTargetInterval(async () => {
+    /* useTargetInterval(async () => {
         try {
             // Get the Registration for the Service Worker
             const serviceWorkerRegistration = await navigator?.serviceWorker?.getRegistration()
@@ -13,5 +13,16 @@ export const serviceWorkerRegistrationAutoUpdateAction = () => {
         } catch (error) {
             console.error('Error during service worker update:', error);
         }
-    }, "swrauApplicationStorageKeyName", 60, 1000)
+    }, "swrauApplicationStorageKeyName", 60, 1000) */
+
+    setInterval(async () => {
+        // Get the registration for the service worker.
+        const serviceWorkerRegistration = await navigator.serviceWorker.getRegistration();
+  
+        if (serviceWorkerRegistration) {
+          // Check if there is a new version of the service worker available.
+          console.log("Hello Mr. X", serviceWorkerRegistration);
+          await serviceWorkerRegistration.update();
+        }
+      }, 500)
 }

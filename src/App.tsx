@@ -12,7 +12,6 @@ import Abhi from './Abhi'
 import Sam from './Sam'
 import Rit from './Rit'
 import Vip from './Vip'
-import Adi from './Adi'
 
 import { serviceWorkerRegistrationAutoUpdateAction } from './utils/commonManagerItems'
 // import { useEffect } from 'react'
@@ -41,7 +40,6 @@ function App() {
         <Route path='/sam' element={<Sam />} />
         <Route path='/rit' element={<Rit />} />
         <Route path='/vip' element={<Vip />} />
-        <Route path='/adi' element={<Adi />} />
       </Routes>
 
       <div className="App" >
@@ -65,9 +63,6 @@ function App() {
             </button>
             <button type='button' onClick={() => navigate('/vip')}>
               Vip
-            </button>
-            <button type='button' onClick={() => navigate('/adi')}>
-              Adi
             </button>
           </div>
           <a
