@@ -23,6 +23,7 @@ root.render(
 // Learn more about service workers: https://cra.link/PWA
 serviceWorkerRegistration.register({
   onUpdate: (registration) => {
+    console.log("asdsa")
     const waitingServiceWorker = registration.waiting
     if (waitingServiceWorker) {
       interface ServiceWorkerEvent extends Event {
