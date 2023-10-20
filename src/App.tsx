@@ -1,30 +1,36 @@
 import logo from './logo.svg'
 import './App.css'
+
 import {
   Route,
   Routes,
   useNavigate
 } from "react-router-dom"
+
 import Test from './Test'
 import Abhi from './Abhi'
 import Sam from './Sam'
-import { useEffect } from 'react'
+import Rit from './Rit'
+import Vip from './Vip'
+import Adi from './Adi'
+
+import { serviceWorkerRegistrationAutoUpdateAction } from './utils/commonManagerItems'
+// import { useEffect } from 'react'
 
 function App() {
-  useEffect(() => {
+  /* useEffect(() => {
     setInterval(async () => {
       // Get the registration for the service worker.
-      if ('serviceWorker' in navigator) {
-        const serviceWorkerRegistration = await navigator.serviceWorker.getRegistration();
+      const serviceWorkerRegistration = await navigator.serviceWorker.getRegistration();
 
-        if (serviceWorkerRegistration) {
-          // Check if there is a new version of the service worker available.
-          console.log("Hello Priyank bhai", serviceWorkerRegistration);
-          await serviceWorkerRegistration.update();
-        }
+      if (serviceWorkerRegistration) {
+        // Check if there is a new version of the service worker available.
+        console.log("Hello Mr. X", serviceWorkerRegistration);
+        await serviceWorkerRegistration.update();
       }
     }, 1 * 60 * 1000)
-  }, [])
+  }, []) */
+  serviceWorkerRegistrationAutoUpdateAction()
 
   const navigate = useNavigate()
   return (
@@ -33,6 +39,9 @@ function App() {
         <Route path='/test' element={<Test />} />
         <Route path='/abhi' element={<Abhi />} />
         <Route path='/sam' element={<Sam />} />
+        <Route path='/rit' element={<Rit />} />
+        <Route path='/vip' element={<Vip />} />
+        <Route path='/adi' element={<Adi />} />
       </Routes>
 
       <div className="App" >
@@ -50,6 +59,15 @@ function App() {
             </button>
             <button type='button' onClick={() => navigate('/sam')}>
               Sam
+            </button>
+            <button type='button' onClick={() => navigate('/rit')}>
+              Rit
+            </button>
+            <button type='button' onClick={() => navigate('/vip')}>
+              Vip
+            </button>
+            <button type='button' onClick={() => navigate('/adi')}>
+              Adi
             </button>
           </div>
           <a
