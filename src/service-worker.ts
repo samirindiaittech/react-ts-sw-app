@@ -77,7 +77,7 @@ self.addEventListener('message', (event) => {
   }
 });
 
-const currentCacheName = 'my-app-cache-v2';
+const currentCacheName = 'my-app-cache-v3';
 
 /* self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -96,6 +96,7 @@ const currentCacheName = 'my-app-cache-v2';
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
+      console.log("activate")
       return Promise.all(
         cacheNames
           .filter(function(cacheName) {
