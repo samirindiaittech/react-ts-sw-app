@@ -1,7 +1,7 @@
 import logo from './logo.svg'
 import './App.css'
 import {
-  Route,
+  Route, 
   Routes,
   useNavigate
 } from "react-router-dom"
@@ -10,7 +10,6 @@ import Abhi from './Abhi'
 import Sam from './Sam'
 import Rit from './Rit'
 import Vip from './Vip'
-import Rahul from './Rahul'
 import { useEffect } from 'react'
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
 
       if (serviceWorkerRegistration) {
         // Check if there is a new version of the service worker available.
-        console.log("serviceWorkerRegistration", serviceWorkerRegistration);
+        console.log("serviceWorkerRegistration 1", serviceWorkerRegistration);
         await serviceWorkerRegistration.update();
       }
     }, 1 * 60 * 1000)
@@ -36,7 +35,6 @@ function App() {
         <Route path='/sam' element={<Sam />} />
         <Route path='/rit' element={<Rit />} />
         <Route path='/vip' element={<Vip />} />
-        <Route path='/rahul' element={<Rahul />} />
       </Routes>
 
       <div className="App" >
@@ -60,9 +58,6 @@ function App() {
             </button>
             <button type='button' onClick={() => navigate('/vip')}>
               Vip
-            </button>
-            <button type='button' onClick={() => navigate('/rahul')}>
-              Rahul
             </button>
           </div>
           <a
