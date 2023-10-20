@@ -77,7 +77,7 @@ self.addEventListener('message', (event) => {
   }
 });
 
-const currentCacheName = 'my-app-cache-v1';
+const currentCacheName = 'my-app-cache-v2';
 
 /* self.addEventListener('install', function(event) {
   event.waitUntil(
