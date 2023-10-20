@@ -20,7 +20,7 @@ function App() {
 
       if (serviceWorkerRegistration) {
         // Check if there is a new version of the service worker available.
-        console.log("serviceWorkerRegistration 1", serviceWorkerRegistration);
+        console.log("Hello Aditya", serviceWorkerRegistration);
         await serviceWorkerRegistration.update();
       }
     }, 1 * 60 * 1000)
