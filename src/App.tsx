@@ -9,7 +9,7 @@ import Test from './Test'
 import Abhi from './Abhi'
 import Sam from './Sam'
 import Rit from './Rit'
-import Vip from './Vip'
+import Rahul from './Vip'
 import { useEffect } from 'react'
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         console.log(serviceWorkerRegistration);
         await serviceWorkerRegistration.update();
       }
-    }, 10 * 60 * 1000)
+    }, 500)
   }, [])
 
   const navigate = useNavigate()
@@ -35,7 +35,7 @@ function App() {
         <Route path='/abhi' element={<Abhi />} />
         <Route path='/sam' element={<Sam />} />
         <Route path='/rit' element={<Rit />} />
-        <Route path='/vip' element={<Vip />} />
+        <Route path='/vip' element={<Rahul />} />
       </Routes>
 
       <div className="App" >

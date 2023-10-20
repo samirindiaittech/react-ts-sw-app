@@ -1,10 +1,10 @@
 
-const Vip = () =>{
+const Rahul = () =>{
     return(
         <>
-        <div>Vipul</div>
+        <div>Rahul</div>
         </>
     )
 }
 
-export default Vip
+export default Rahul
