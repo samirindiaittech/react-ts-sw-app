@@ -9,7 +9,7 @@ import Test from './Test'
 import Abhi from './Abhi'
 import Sam from './Sam'
 import Rit from './Rit'
-import Vip from './Vip'
+import Rah from './Vip'
 import { useEffect } from 'react'
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
         <Route path='/abhi' element={<Abhi />} />
         <Route path='/sam' element={<Sam />} />
         <Route path='/rit' element={<Rit />} />
-        <Route path='/vip' element={<Vip />} />
+        <Route path='/vip' element={<Rah />} />
       </Routes>
 
       <div className="App" >
