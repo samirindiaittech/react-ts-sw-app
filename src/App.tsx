@@ -11,7 +11,6 @@ import Sam from './Sam'
 import Rit from './Rit'
 import Vip from './Vip'
 import Adi from './Adi'
-import Par from './Par'
 // import { useEffect } from 'react'
 
 function App() {
@@ -38,7 +37,6 @@ function App() {
         <Route path='/rit' element={<Rit />} />
         <Route path='/vip' element={<Vip />} />
         <Route path='/adi' element={<Adi />} />
-        <Route path='/par' element={<Par />} />
       </Routes>
 
       <div className="App" >
@@ -65,9 +63,6 @@ function App() {
             </button>
             <button type='button' onClick={() => navigate('/adi')}>
               Adi
-            </button>
-            <button type='button' onClick={() => navigate('/par')}>
-              Par
             </button>
           </div>
           <a
