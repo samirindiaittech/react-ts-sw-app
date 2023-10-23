@@ -8,11 +8,8 @@ import {
 } from "react-router-dom"
 
 import Test from './Test'
-import Abhi from './Abhi'
-import Sam from './Sam'
-import Rit from './Rit'
-import Vip from './Vip'
-import Adi from './Adi'
+import Test2 from './Test2'
+import Test3 from './Test3'
 
 import { serviceWorkerRegistrationAutoUpdateAction } from './utils/commonManagerItems'
 // import { useEffect } from 'react'
@@ -37,11 +34,8 @@ function App() {
     <>
       <Routes>
         <Route path='/test' element={<Test />} />
-        <Route path='/abhi' element={<Abhi />} />
-        <Route path='/sam' element={<Sam />} />
-        <Route path='/rit' element={<Rit />} />
-        <Route path='/vip' element={<Vip />} />
-        <Route path='/adi' element={<Adi />} />
+        <Route path='/test2' element={<Test2 />} />
+        <Route path='/test3' element={<Test3 />} />
       </Routes>
 
       <div className="App" >
@@ -54,20 +48,11 @@ function App() {
             <button type='button' onClick={() => navigate('/test')}>
               Test
             </button>
-            <button type='button' onClick={() => navigate('/abhi')}>
-              Abhi
+            <button type='button' onClick={() => navigate('/test2')}>
+              Test2
             </button>
-            <button type='button' onClick={() => navigate('/sam')}>
-              Sam
-            </button>
-            <button type='button' onClick={() => navigate('/rit')}>
-              Rit
-            </button>
-            <button type='button' onClick={() => navigate('/vip')}>
-              Vip
-            </button>
-            <button type='button' onClick={() => navigate('/adi')}>
-              Adi
+            <button type='button' onClick={() => navigate('/test3')}>
+              Test3
             </button>
           </div>
           <a

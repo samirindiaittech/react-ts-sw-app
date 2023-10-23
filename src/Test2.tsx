@@ -1,13 +1,13 @@
 import './App.css'
 import { useNavigate } from "react-router-dom"
 
-function Abhi() {
+function Test2() {
   const navigate = useNavigate()
   return (
     <>
       <div>
         <span>
-        Abhi
+          Test 2
         </span>
         <button type='button' onClick={() => navigate('/')}>
           Go to App
@@ -17,4 +17,4 @@ function Abhi() {
   )
 }
 
-export default Abhi
+export default Test2
