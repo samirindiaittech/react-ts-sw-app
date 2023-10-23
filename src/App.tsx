@@ -8,18 +8,22 @@ import {
 } from "react-router-dom"
 
 import Test from './Test'
+import Test2 from './Test2'
+import Test3 from './Test3'
 
-import { serviceWorkerRegistrationAutoUpdateAction } from './utils/commonManagerItems'
+// import { serviceWorkerRegistrationAutoUpdateAction } from './utils/commonManagerItems'
 // import { useEffect } from 'react'
 
 function App() {
-  serviceWorkerRegistrationAutoUpdateAction()
+  // serviceWorkerRegistrationAutoUpdateAction()
 
   const navigate = useNavigate()
   return (
     <>
       <Routes>
         <Route path='/test' element={<Test />} />
+        <Route path='/test2' element={<Test2 />} />
+        <Route path='/test3' element={<Test3 />} />
       </Routes>
 
       <div className="App" >
@@ -31,6 +35,12 @@ function App() {
           <div>
             <button type='button' onClick={() => navigate('/test')}>
               Test
+            </button>
+            <button type='button' onClick={() => navigate('/test2')}>
+              Test 2
+            </button>
+            <button type='button' onClick={() => navigate('/test3')}>
+              Test 3
             </button>
           </div>
           <a
