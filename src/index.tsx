@@ -25,11 +25,11 @@ serviceWorkerRegistration.register({
   onUpdate: (registration) => {
     const waitingServiceWorker = registration.waiting
     if (waitingServiceWorker) {
-      interface ServiceWorkerEvent extends Event {
+      /* interface ServiceWorkerEvent extends Event {
         target: Partial<ServiceWorker> & EventTarget | null
-      }
+      } */
 
-      waitingServiceWorker.addEventListener('statechange', (event: ServiceWorkerEvent) => {
+      waitingServiceWorker.addEventListener('statechange', (event /* event: ServiceWorkerEvent */) => {
         const worker = event.target as ServiceWorker
         // The new service worker has been activated
         if (worker.state === 'activated') {
