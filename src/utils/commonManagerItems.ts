@@ -4,18 +4,18 @@ export const serviceWorkerRegistrationAutoUpdateAction = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useTargetInterval(async () => {
         try {
-            console.log("Sir Km Cho?")
+            console.log("Hello Sir?")
             // Get the Registration for the Service Worker
             const serviceWorkerRegistration = await navigator?.serviceWorker?.getRegistration()
             if (serviceWorkerRegistration) {
                 // Check if there is a New Version of the Service Worker Available
-                console.log("Hello Mr. Oops", serviceWorkerRegistration)
+                console.log("Hello Mr. Adi", serviceWorkerRegistration)
                 await serviceWorkerRegistration.update()
             }
         } catch (error) {
             console.error('Error during service worker update:', error)
         }
-    }, "swrauApplicationStorageKeyName", 30, 1000)
+    }, "swrauApplicationStorageKeyName", 60, 1000)
 
     /* setInterval(async () => {
         try {

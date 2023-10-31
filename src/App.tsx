@@ -11,11 +11,17 @@ import Test from './Test'
 import Test2 from './Test2'
 import Test3 from './Test3'
 
-// import { serviceWorkerRegistrationAutoUpdateAction } from './utils/commonManagerItems'
-// import { useEffect } from 'react'
+import { serviceWorkerRegistrationAutoUpdateAction } from './utils/commonManagerItems'
 
 function App() {
-  // serviceWorkerRegistrationAutoUpdateAction()
+  serviceWorkerRegistrationAutoUpdateAction()
+
+  function clickHereFunc() {
+    caches.keys().then(list => {
+      list.map(key => caches.delete(key))
+      window.location.reload()
+    })
+  }
 
   const navigate = useNavigate()
   return (
@@ -33,6 +39,9 @@ function App() {
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
           <div>
+            <button type='button' onClick={() => clickHereFunc()}>
+              Click Here
+            </button>
             <button type='button' onClick={() => navigate('/test')}>
               Test
             </button>
