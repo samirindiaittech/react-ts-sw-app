@@ -7,10 +7,11 @@ import {
   useNavigate
 } from "react-router-dom"
 
-import Test from './Test'
-import Test2 from './Test2'
-import Test3 from './Test3'
-import Test4 from './Test4'
+import Test from './components/Test'
+import Test2 from './components/Test2'
+import Test3 from './components/Test3'
+import Test4 from './components/Test4'
+import IdleTimer from './components/IdleTimer'
 
 import { serviceWorkerRegistrationAutoUpdateAction } from './utils/commonManagerItems'
 
@@ -27,6 +28,7 @@ function App() {
   const navigate = useNavigate()
   return (
     <>
+      <IdleTimer />
       <Routes>
         <Route path='/test' element={<Test />} />
         <Route path='/test2' element={<Test2 />} />
