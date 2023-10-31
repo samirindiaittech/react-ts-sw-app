@@ -10,6 +10,7 @@ import {
 import Test from './Test'
 import Test2 from './Test2'
 import Test3 from './Test3'
+import Test4 from './Test4'
 
 import { serviceWorkerRegistrationAutoUpdateAction } from './utils/commonManagerItems'
 
@@ -17,7 +18,7 @@ function App() {
   serviceWorkerRegistrationAutoUpdateAction()
 
   function clickHereFunc() {
-    caches.keys().then(list => {
+    window.caches.keys().then(list => {
       list.map(key => caches.delete(key))
       window.location.reload()
     })
@@ -30,6 +31,7 @@ function App() {
         <Route path='/test' element={<Test />} />
         <Route path='/test2' element={<Test2 />} />
         <Route path='/test3' element={<Test3 />} />
+        <Route path='/test4' element={<Test4 />} />
       </Routes>
 
       <div className="App" >
@@ -40,7 +42,7 @@ function App() {
           </p>
           <div>
             <button type='button' onClick={() => clickHereFunc()}>
-              Click Here
+              Click Here to Reload
             </button>
             <button type='button' onClick={() => navigate('/test')}>
               Test
@@ -50,6 +52,9 @@ function App() {
             </button>
             <button type='button' onClick={() => navigate('/test3')}>
               Test 3
+            </button>
+            <button type='button' onClick={() => navigate('/test4')}>
+              Test 4
             </button>
           </div>
           <a
