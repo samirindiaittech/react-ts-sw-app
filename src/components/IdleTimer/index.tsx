@@ -10,38 +10,43 @@ import { useIdleTimer } from 'react-idle-timer'
 const IdleTimer: React.FC = (): JSX.Element => {
   const promptBeforeIdle = 5_000
   const timeout = 30_000 + promptBeforeIdle
-  const [state, setState] = useState<string>('Active')
-  const [event, setEvent] = useState<string>('Event')
+  /* const [state, setState] = useState<string>('Active')
+  const [event, setEvent] = useState<string>('Event') */
   const [remaining, setRemaining] = useState<number>(timeout)
   const [open, setOpen] = useState<boolean>(false)
 
   const onAction = (event?: Event) => {
-    setEvent(event?.type ?? 'Event')
+    // setEvent(event?.type ?? 'Event')
   }
 
   const onIdle = () => {
-    setState('Idle')
+    // setState('Idle')
     setOpen(false)
   }
 
   const onActive = () => {
-    setState('Active')
+    // setState('Active')
     setOpen(false)
   }
 
   const onPrompt = () => {
-    setState('Prompted')
+    // setState('Prompted')
     setOpen(true)
   }
 
   const {
     getRemainingTime,
+    /* getTabId,
+    isLeader,
+    isLastActiveTab, */
     activate
   } = useIdleTimer({
     onAction,
     onIdle,
     onActive,
     onPrompt,
+    crossTab: true,
+    leaderElection: true,
     timeout,
     promptBeforeIdle,
     throttle: 500
@@ -61,18 +66,25 @@ const IdleTimer: React.FC = (): JSX.Element => {
     activate()
   }
 
-  const timeTillPrompt = Math.max(remaining - promptBeforeIdle / 1000, 0)
+  /* const timeTillPrompt = Math.max(remaining - promptBeforeIdle / 1000, 0)
   const seconds = timeTillPrompt > 1 ? 'seconds' : 'second'
+  const tabId = getTabId() === null ? 'loading' : getTabId().toString()
+  const lastActiveTab =
+    isLastActiveTab() === null ? 'loading' : isLastActiveTab().toString()
+  const leader = isLeader() === null ? 'loading' : isLeader().toString() */
 
   return (
     <>
+      {/* <p> Tab ID: {tabId}</p>
+      <p>Last Active Tab: {lastActiveTab}</p>
+      <p>Is Leader Tab: {leader}</p>
       <p>Last Event: {event}</p>
       <p>Current State: {state}</p>
       {timeTillPrompt > 0 && (
         <p>
           {timeTillPrompt} {seconds} until prompt
         </p>
-      )}
+      )} */}
       <Modal
         show={open}
         aria-labelledby="contained-modal-title-vcenter"
