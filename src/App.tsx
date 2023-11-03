@@ -1,4 +1,4 @@
-// import logo from './logo.svg'
+import logo from './logo.svg'
 import './App.css'
 
 import {
@@ -11,6 +11,7 @@ import Test from './components/Test'
 import Test2 from './components/Test2'
 import Test3 from './components/Test3'
 import Test4 from './components/Test4'
+import Test5 from './components/Test5'
 
 import { serviceWorkerRegistrationAutoUpdateAction } from './utils/commonManagerItems'
 
@@ -25,11 +26,12 @@ function App() {
         <Route path='/test2' element={<Test2 />} />
         <Route path='/test3' element={<Test3 />} />
         <Route path='/test4' element={<Test4 />} />
+        <Route path='/test4' element={<Test5 />} />
       </Routes>
 
       <div className="App" >
         <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
@@ -45,6 +47,9 @@ function App() {
             </button>
             <button type='button' onClick={() => navigate('/test4')}>
               Test 4
+            </button>
+            <button type='button' onClick={() => navigate('/test5')}>
+              Test 5
             </button>
           </div>
           <a

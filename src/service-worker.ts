@@ -89,12 +89,14 @@ const CACHE_NAME = `$my-app-cache-v-${process.env.REACT_APP_VERSION}`
 self.addEventListener("activate", event => {
   async function deleteOldCaches() {
     // List all caches by their names.
-    const names = await window.caches.keys()
+    const names = await caches.keys()
     // eslint-disable-next-line array-callback-return
     await Promise.all(names.map(name => {
+      console.log("name", name)
       if (name !== CACHE_NAME) {
+        console.log("CACHE_NAME", CACHE_NAME)
         // If a cache's name is the current name, delete it.
-        return window.caches.delete(name)
+        return caches.delete(name)
       }
     }))
   }
