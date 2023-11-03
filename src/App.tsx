@@ -11,24 +11,15 @@ import Test from './components/Test'
 import Test2 from './components/Test2'
 import Test3 from './components/Test3'
 import Test4 from './components/Test4'
-import IdleTimer from './components/IdleTimer'
 
 import { serviceWorkerRegistrationAutoUpdateAction } from './utils/commonManagerItems'
 
 function App() {
   serviceWorkerRegistrationAutoUpdateAction()
 
-  function clickHereFunc() {
-    window.caches.keys().then(list => {
-      list.map(key => caches.delete(key))
-      window.location.reload()
-    })
-  }
-
   const navigate = useNavigate()
   return (
     <>
-      <IdleTimer />
       <Routes>
         <Route path='/test' element={<Test />} />
         <Route path='/test2' element={<Test2 />} />
@@ -43,9 +34,6 @@ function App() {
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
           <div>
-            <button type='button' onClick={() => clickHereFunc()}>
-              Click Here to Reload
-            </button>
             <button type='button' onClick={() => navigate('/test')}>
               Test
             </button>

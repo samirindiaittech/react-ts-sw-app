@@ -22,6 +22,7 @@ export const useTargetInterval: IUseTargetInterval = (callback, applicationStora
                 targetIntervalFunction(targetInterval)
             }
         }, interval)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
@@ -41,5 +42,6 @@ export const useTargetInterval: IUseTargetInterval = (callback, applicationStora
                 window.clearInterval(savedCallback.current)
             }
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [applicationStorageKeyName, targetInterval])
 }

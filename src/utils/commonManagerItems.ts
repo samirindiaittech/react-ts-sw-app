@@ -13,7 +13,7 @@ export const serviceWorkerRegistrationAutoUpdateAction = () => {
         } catch (error) {
             console.error('Error during service worker update:', error)
         }
-    }, "swrauApplicationStorageKeyName", 60, 1000)
+    }, "swrauApplicationStorageKeyName", 150, 1000)
 
     /* setInterval(async () => {
         try {
