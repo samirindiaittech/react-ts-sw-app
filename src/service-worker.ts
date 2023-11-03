@@ -92,9 +92,7 @@ self.addEventListener("activate", event => {
     const names = await caches.keys()
     // eslint-disable-next-line array-callback-return
     await Promise.all(names.map(name => {
-      console.log("name", name)
       if (name !== CACHE_NAME) {
-        console.log("CACHE_NAME", CACHE_NAME)
         // If a cache's name is the current name, delete it.
         return caches.delete(name)
       }
