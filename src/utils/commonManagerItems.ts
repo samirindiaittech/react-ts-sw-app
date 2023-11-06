@@ -7,6 +7,10 @@ export const serviceWorkerRegistrationAutoUpdateAction = () => {
             // Get the Registration for the Service Worker
             const serviceWorkerRegistration = await navigator?.serviceWorker?.getRegistration()
             if (serviceWorkerRegistration) {
+                if (serviceWorkerRegistration.installing) {
+                    await serviceWorkerRegistration.installing.onstatechange;
+                }
+
                 // Check if there is a New Version of the Service Worker Available
                 await serviceWorkerRegistration.update()
             }

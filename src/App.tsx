@@ -6,6 +6,10 @@ import {
   Routes,
   useNavigate
 } from "react-router-dom"
+import {
+  useEffect,
+  useState
+} from 'react'
 
 import Test from './components/Test'
 import Test2 from './components/Test2'
@@ -14,6 +18,34 @@ import Test3 from './components/Test3'
 import { serviceWorkerRegistrationAutoUpdateAction } from './utils/commonManagerItems'
 
 function App() {
+  const [browserReInitiated, setBrowserReInitiated] = useState(false)
+
+  const windowFocusHandler = () => {
+    // Set the flag indicating that the browser has been reopened.
+    setBrowserReInitiated(true)
+  }
+
+  const windowBlurHandler = () => {
+    // Set the flag indicating that the browser has lost focus.
+    setBrowserReInitiated(false)
+  }
+
+  useEffect(() => {
+    // Add event listeners for the window focus and blur events.
+    window.addEventListener('focus', windowFocusHandler)
+    window.addEventListener('blur', windowBlurHandler)
+
+    // Remove event listeners when the component unmounts.
+    return () => {
+      window.removeEventListener('focus', windowFocusHandler)
+      window.removeEventListener('blur', windowBlurHandler)
+    }
+  }, [])
+
+  if (browserReInitiated) {
+    console.log("log out from desktop")
+  }
+
   serviceWorkerRegistrationAutoUpdateAction()
 
   const navigate = useNavigate()
