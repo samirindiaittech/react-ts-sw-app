@@ -11,6 +11,11 @@ import {
   useState
 } from 'react'
 
+import {
+  isMobile,
+  isTablet
+} from 'react-device-detect'
+
 import Test from './components/Test'
 import Test2 from './components/Test2'
 import Test3 from './components/Test3'
@@ -18,32 +23,60 @@ import Test3 from './components/Test3'
 import { serviceWorkerRegistrationAutoUpdateAction } from './utils/commonManagerItems'
 
 function App() {
-  const [browserReInitiated, setBrowserReInitiated] = useState(false)
+  const [isTabInFocus, setIsTabInFocus] = useState(false)
+
+  const touchStartHandler = () => {
+    setIsTabInFocus(true)
+  }
+
+  const orientationcChangeHandler = () => {
+    setIsTabInFocus(true)
+  }
+
+  const visibilityChangeHandler = () => {
+    setIsTabInFocus(document.visibilityState === "visible")
+  }
 
   const windowFocusHandler = () => {
     // Set the flag indicating that the browser has been reopened.
-    setBrowserReInitiated(true)
+    setIsTabInFocus(true)
   }
 
   const windowBlurHandler = () => {
     // Set the flag indicating that the browser has lost focus.
-    setBrowserReInitiated(false)
+    setIsTabInFocus(false)
   }
 
   useEffect(() => {
-    // Add event listeners for the window focus and blur events.
-    window.addEventListener('focus', windowFocusHandler)
-    window.addEventListener('blur', windowBlurHandler)
+    if (isMobile || isTablet) {
+      document.addEventListener('touchstart', touchStartHandler)
+      window.addEventListener("visibilitychange", visibilityChangeHandler)
+      window.addEventListener('orientationchange', orientationcChangeHandler)
+    } else {
+      // Add event listeners for the window focus and blur events.
+      window.addEventListener('focus', windowFocusHandler)
+      window.addEventListener('blur', windowBlurHandler)
+    }
 
     // Remove event listeners when the component unmounts.
     return () => {
-      window.removeEventListener('focus', windowFocusHandler)
-      window.removeEventListener('blur', windowBlurHandler)
+      if (isMobile || isTablet) {
+        document.removeEventListener('touchstart', touchStartHandler)
+        window.removeEventListener("visibilitychange", visibilityChangeHandler)
+        window.removeEventListener("orientationchange", orientationcChangeHandler)
+      } else {
+        window.removeEventListener('focus', windowFocusHandler)
+        window.removeEventListener('blur', windowBlurHandler)
+      }
     }
   }, [])
 
-  if (browserReInitiated) {
-    console.log("log out from desktop")
+  if (isTabInFocus) {
+    if (isMobile || isTablet) {
+      console.log("log out from mobile or tablet")
+    } else {
+      console.log("log out from desktop")
+    }
   }
 
   serviceWorkerRegistrationAutoUpdateAction()
